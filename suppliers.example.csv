@@ -1,0 +1,4 @@
+fournisseur,portail_url,methode_acces,paye_par,quirks,automatisable
+Exemple Cloud,https://console.exemple-cloud.com/billing,login web puis Download PDF,carte débit,"délai de génération du PDF parfois > 30 s ; décocher l'export CSV",oui
+Exemple Marketplace,https://business.exemple-shop.fr,fetch lien PDF depuis la page commande,virement,"achats répartis entre le domaine .fr et .de, même compte ; une commande peut avoir plusieurs factures",oui
+Exemple Portail itsme,https://portail.exemple.be,login itsme (manuel),domiciliation,"anti-bot / itsme → à faire manuellement, déposer le PDF dans Downloads",non

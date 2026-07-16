@@ -1,0 +1,35 @@
+# === Secrets & configuration d'instance ===
+.env
+.env.local
+*.local.*
+
+# === Données comptables — ne JAMAIS committer ===
+# Justificatifs, relevés, factures
+*.pdf
+# Listes fournisseurs et exports (le gabarit suppliers.example.csv est whitelisté plus bas)
+*.xlsx
+*.xls
+suppliers.csv
+fournisseurs.xlsx
+# Trackers de factures manquantes générés par trimestre
+factures-manquantes-*.md
+
+# === Dossiers de données d'un trimestre ===
+# Seuls les .gitkeep du gabarit template-trimestre/ sont versionnés.
+Factures entrantes/
+Factures sortantes/
+Note de crédit/
+Justificatif/
+Relevés Mastercard/
+écriture comptable/
+# Ré-inclure le gabarit vide
+!template-trimestre/
+!template-trimestre/**/
+!template-trimestre/**/.gitkeep
+
+# Whitelister le gabarit CSV malgré *.csv ci-dessus n'est pas nécessaire
+# (seul suppliers.csv est ignoré, pas *.csv)
+
+# === Divers ===
+.DS_Store
+node_modules/
