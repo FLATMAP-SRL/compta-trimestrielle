@@ -1,13 +1,13 @@
 # CLI `accountable`
 
 La réconciliation (étape « dresser la liste des factures manquantes ») est portée par un
-petit CLI TypeScript **non officiel**, distribué séparément de ce dépôt. Le skill
+petit CLI TypeScript **non officiel**, inclus dans ce dépôt sous `accountable-cli/`. Le skill
 `accountable-cli` documente son usage au quotidien ; ce document couvre l'installation et
 l'architecture.
 
 ## Installation
 
-Le CLI n'est pas inclus ici (c'est son propre projet). Une fois cloné :
+Depuis la racine du dépôt :
 
 ```bash
 cd accountable-cli
@@ -18,6 +18,16 @@ npm link          # expose le binaire global `accountable` (alias `acc`)
 ```
 
 Node 22, ESM. Dépendances typiques : `commander`, `zod`, `cli-table3`, `exceljs`.
+
+## Configuration
+
+Le CLI lit sa session dans `~/.config/accountable/config.json` (voir « Authentification »
+plus bas) et accepte quelques variables d'environnement, alignées sur le `.env` du dépôt :
+
+- `ACCOUNTABLE_FISCAL_ACCOUNTS` — IBAN(s) interrogé(s) par période TVA (= `BANK_MAIN_IBAN`),
+  séparés par des virgules. Sinon `settings.fiscalAccounts` dans le fichier config.
+- `ACCOUNTABLE_CARD_SETTLEMENT_REF` (optionnel) — référence de règlement de carte à exclure
+  de la réconciliation, en plus du motif générique « mastercard NNN ».
 
 ## Authentification
 

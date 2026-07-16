@@ -18,8 +18,9 @@ comptabilité.
 | Chemin | Rôle |
 |---|---|
 | `.claude/skills/` | Les 5 skills Claude Code : réconciliation, API Accountable, portails, téléchargements |
+| `accountable-cli/` | Le CLI `accountable` (TypeScript) : réconciliation en terminal |
 | `docs/workflow.md` | Le fil conducteur du cycle trimestriel |
-| `docs/accountable-cli.md` | Installation & archi du CLI `accountable` (distribué à part) |
+| `docs/accountable-cli.md` | Installation & archi du CLI `accountable` |
 | `.env.example` | Toutes les variables d'instance à remplir |
 | `suppliers.example.csv` | Gabarit de liste fournisseurs |
 | `template-trimestre/` | Arborescence vide à copier pour chaque nouveau trimestre |
@@ -29,8 +30,8 @@ comptabilité.
 - **Claude Code** (les skills sont chargés depuis `.claude/skills/`).
 - Le **MCP `chrome-devtools`** (pilotage du navigateur pour les portails). Voir
   [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp).
-- Le **CLI `accountable`** (réconciliation en terminal) — projet séparé, voir
-  `docs/accountable-cli.md`. Optionnel : tout peut aussi passer par l'API directement.
+- Le **CLI `accountable`** (réconciliation en terminal) — inclus dans `accountable-cli/`,
+  voir `docs/accountable-cli.md`. Optionnel : tout peut aussi passer par l'API directement.
 - Un **compte Accountable** actif.
 
 ## Mise en route
@@ -41,6 +42,9 @@ cd compta-trimestrielle
 
 cp .env.example .env          # puis remplir VOS valeurs (TVA, IBAN, email, …)
 cp suppliers.example.csv suppliers.csv   # puis lister VOS fournisseurs
+
+# le CLI de réconciliation :
+cd accountable-cli && npm install && npm run build && npm link && cd ..
 ```
 
 `.env`, `suppliers.csv` et tout fichier comptable (`*.pdf`, `*.xlsx`,

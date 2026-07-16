@@ -5,7 +5,7 @@ description: Use when you want to consult Accountable or find a quarter's missin
 
 # CLI `accountable` (réconciliation Accountable en terminal)
 
-Outil TypeScript **non officiel** distribué à part (voir `docs/accountable-cli.md` pour l'installation), binaire global **`accountable`** (alias **`acc`**). **Lecture seule** : il consulte et réconcilie ; l'upload/liaison de factures reste manuel (web app — voir [[accountable-api]]). Pour la logique brute de l'API ou ce que le CLI ne fait pas, voir [[accountable-api]] ; pour le workflow complet de collecte, [[collecte-factures-trimestre]].
+Outil TypeScript **non officiel** inclus dans le dépôt sous `accountable-cli/` (voir `docs/accountable-cli.md` pour l'installation), binaire global **`accountable`** (alias **`acc`**). **Lecture seule** : il consulte et réconcilie ; l'upload/liaison de factures reste manuel (web app — voir [[accountable-api]]). Pour la logique brute de l'API ou ce que le CLI ne fait pas, voir [[accountable-api]] ; pour le workflow complet de collecte, [[collecte-factures-trimestre]].
 
 ## Connexion (à refaire ~toutes les 12 h)
 Pas d'API key : on réutilise la session du navigateur.
